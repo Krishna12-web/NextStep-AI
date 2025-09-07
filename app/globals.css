@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;```
+
+**Step 3: Commit and Push to GitHub**
+
+1.  Open the GitHub Desktop app.
+2.  You will see the new `globals.css` file.
+3.  Write a summary like `Add global styles`.
+4.  Click **"Commit to main"** and then **"Push origin"**.
+
+After you have done this, go back to Netlify and redeploy. This will solve the final build error, and your project will be successfully deployed.
