@@ -1,0 +1,267 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AI Interview Coach Design System - Professional & Calming */
+
+@layer base {
+  :root {
+    /* Core Brand Colors */
+    --background: 240 10% 98%;
+    --foreground: 240 15% 9%;
+    
+    /* Professional Interview Blue */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 217 91% 70%;
+    
+    /* Confidence Green */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --success-glow: 142 76% 46%;
+    
+    /* Stress/Warning System */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --danger: 0 84% 60%;
+    --danger-foreground: 0 0% 100%;
+    
+    /* Calm Neutrals */
+    --card: 0 0% 100%;
+    --card-foreground: 240 15% 9%;
+    --card-hover: 240 20% 97%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 15% 9%;
+    
+    --secondary: 240 10% 94%;
+    --secondary-foreground: 240 15% 25%;
+    
+    --muted: 240 10% 95%;
+    --muted-foreground: 240 10% 45%;
+    
+    --accent: 217 91% 95%;
+    --accent-foreground: 217 91% 25%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 240 20% 90%;
+    --input: 240 20% 95%;
+    --ring: 217 91% 60%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 60%), hsl(217 91% 70%));
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 46%));
+    --gradient-stress: linear-gradient(135deg, hsl(38 92% 50%), hsl(0 84% 60%));
+    --gradient-calm: linear-gradient(135deg, hsl(240 10% 98%), hsl(240 20% 95%));
+    
+    /* Shadows */
+    --shadow-interview: 0 10px 40px -10px hsl(217 91% 60% / 0.2);
+    --shadow-card: 0 4px 20px -4px hsl(240 15% 9% / 0.1);
+    
+    /* Animations & Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Core Brand Colors - Dark Mode */
+    --background: 240 15% 9%;
+    --foreground: 240 10% 98%;
+    
+    /* Professional Interview Blue - Dark Mode */
+    --primary: 217 91% 65%;
+    --primary-foreground: 240 15% 9%;
+    --primary-glow: 217 91% 75%;
+    
+    /* Success/Confidence - Dark Mode */
+    --success: 142 76% 41%;
+    --success-foreground: 0 0% 100%;
+    --success-glow: 142 76% 51%;
+    
+    /* Stress/Warning - Dark Mode */
+    --warning: 38 92% 55%;
+    --warning-foreground: 240 15% 9%;
+    --danger: 0 84% 65%;
+    --danger-foreground: 240 15% 9%;
+    
+    /* Calm Neutrals - Dark Mode */
+    --card: 240 15% 12%;
+    --card-foreground: 240 10% 98%;
+    --card-hover: 240 15% 15%;
+    
+    --popover: 240 15% 12%;
+    --popover-foreground: 240 10% 98%;
+    
+    --secondary: 240 15% 18%;
+    --secondary-foreground: 240 10% 90%;
+    
+    --muted: 240 15% 15%;
+    --muted-foreground: 240 10% 60%;
+    
+    --accent: 240 15% 18%;
+    --accent-foreground: 240 10% 90%;
+    
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 240 15% 9%;
+    
+    --border: 240 15% 20%;
+    --input: 240 15% 18%;
+    --ring: 217 91% 65%;
+    
+    /* Gradients - Dark Mode */
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 65%), hsl(217 91% 75%));
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 41%), hsl(142 76% 51%));
+    --gradient-stress: linear-gradient(135deg, hsl(38 92% 55%), hsl(0 84% 65%));
+    --gradient-calm: linear-gradient(135deg, hsl(240 15% 9%), hsl(240 15% 15%));
+    
+    /* Shadows - Dark Mode */
+    --shadow-interview: 0 10px 40px -10px hsl(217 91% 65% / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 40px hsl(217 91% 65% / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply text-foreground transition-colors duration-200;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+    
+    /* Beautiful calm gradient background */
+    background: linear-gradient(135deg, 
+      #e0f2fe 0%, 
+      #e1f5fe 15%,
+      #f3e5f5 30%, 
+      #e8f5e8 45%,
+      #fff3e0 60%,
+      #fce4ec 75%,
+      #e0f7fa 90%,
+      #f1f8e9 100%
+    );
+    background-size: 400% 400%;
+    animation: gradient-shift 15s ease-in-out infinite;
+  }
+
+  /* Floating aurora orbs */
+  body::before {
+    content: "";
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: 
+      radial-gradient(circle at 20% 20%, rgba(129, 140, 248, 0.4) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(52, 211, 153, 0.35) 0%, transparent 50%),
+      radial-gradient(circle at 40% 60%, rgba(196, 181, 253, 0.3) 0%, transparent 50%);
+    animation: aurora-float 20s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    top: -30%;
+    right: -30%;
+    width: 150%;
+    height: 150%;
+    background: 
+      radial-gradient(circle at 70% 30%, rgba(56, 189, 248, 0.3) 0%, transparent 60%),
+      radial-gradient(circle at 30% 70%, rgba(244, 114, 182, 0.25) 0%, transparent 60%),
+      radial-gradient(circle at 50% 50%, rgba(167, 243, 208, 0.2) 0%, transparent 70%);
+    animation: aurora-float 25s ease-in-out infinite reverse;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  @keyframes aurora-float {
+    0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+    33% { transform: translate(30px, -30px) rotate(120deg) scale(1.1); }
+    66% { transform: translate(-20px, 20px) rotate(240deg) scale(0.9); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    body, body::before, body::after {
+      animation: none !important;
+    }
+  }
+
+  /* Glassmorphism effects */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  }
+
+  .glass-nav {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  /* Enhanced card hover effects */
+  .card-hover-glow {
+    transition: all 0.3s ease;
+  }
+
+  .card-hover-glow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 20px rgba(99, 102, 241, 0.2);
+  }
+
+  /* Floating animation for elements */
+  .float-gentle {
+    animation: float-gentle 6s ease-in-out infinite;
+  }
+
+  @keyframes float-gentle {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Shimmer effect */
+  .shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/50;
+  }
+}
